@@ -10,7 +10,7 @@ sudo apt update
 # Install dependencies
 sudo apt install -y jq cmake libtool automake libusb-1.0-0-dev libhidapi-dev \
     libftdi1-dev patchelf autoconf automake texinfo build-essential gcc-arm-none-eabi \
-    libnewlib-arm-none-eabi
+    libnewlib-arm-none-eabi pkg-config
 
 # Create pico directory if haven't already
 mkdir -p ~/pico && cd ~/pico
