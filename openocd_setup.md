@@ -79,7 +79,7 @@ load debugprobe binary. Locate the binary then install using the following.
 
 ```{bash}
 # sudo picotool load -f <path to binary> 
-sudo picotool load -f debugprobe debugprobe_on_pico2.uf2
+sudo picotool load -f debugprobe_on_pico2.uf2
 
 ```
 
