@@ -58,6 +58,8 @@ make -j4
 cd ~/pico
 git clone https://github.com/raspberrypi/debugprobe.git
 cd debugprobe
+# revert to a previous release as latest fw version does not connect properly with WSL due to USB-DAP changes
+git checkout debugprobe-v2.2.3
 git submodule update --init --recursive
 
 mkdir -p build && cd build
