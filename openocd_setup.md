@@ -38,6 +38,11 @@ git submodule update --init --recursive
 make clean
 make
 sudo make install
+
+# Also make sure to copy over the udev rules (should be still in the openocd/ directory here)
+
+sudo cp contrib/60-openocd.rules /etc/udev/rules.d/
+udevadm control --reload
 ```
 
 ## picotool
@@ -100,4 +105,11 @@ cmake -DPICO_BOARD=pico2 ..
 # Let's make the blink binary
 cd blink
 make -j4
+```
+
+## flash using openocd
+```{bash}
+# Locate the blink.elf binary and let's use openocd to flash!
+# If you haven't loaded proper udev rules, might have to inject sudo perms here
+openocd -f interface/cmsis-dap.cfg -f target/rp2350.cfg -c "adapter speed 5000" -c "program blink.elf verify reset exit"
 ```
