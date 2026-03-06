@@ -113,3 +113,11 @@ make -j4
 # If you haven't loaded proper udev rules, might have to inject sudo perms here
 openocd -f interface/cmsis-dap.cfg -f target/rp2350.cfg -c "adapter speed 5000" -c "program blink.elf verify reset exit"
 ```
+
+## openocd.cfg
+Typing this entire command is very cumbersome IK!
+
+So! Let's make an openocd.cfg file:
+[OpenOCD Confile File Guidelines](https://openocd.org/doc/html/Config-File-Guidelines.html)
+
+An example is shown in this repo as `openocd.cfg`
