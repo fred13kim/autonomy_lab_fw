@@ -23,6 +23,11 @@ In your rc file `.bashrc` or `.zshrc` append the following at the end:
 export PICO_SDK_PATH=~/pico/pico-sdk
 ```
 
+Now resource the `.bashrc` file by running:
+```{bash}
+source ~/.bashrc
+```
+
 ## openocd setup
 The raspberry pico uses their own fork of openocd let's set it up!
 
