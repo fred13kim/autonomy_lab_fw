@@ -23,7 +23,7 @@ sudo apt install -y jq cmake libtool automake libusb-1.0-0-dev libhidapi-dev \
 mkdir -p ~/pico && cd ~/pico
 # Clone & install pico-sdk repo here
 git clone https://github.com/raspberrypi/pico-sdk.git
-
+git submodule update --init --recursive
 ```
 
 In your rc file `.bashrc` or `.zshrc` append the following at the end:
@@ -50,7 +50,7 @@ sudo make install
 # Also make sure to copy over the udev rules (should be still in the openocd/ directory here)
 
 sudo cp contrib/60-openocd.rules /etc/udev/rules.d/
-udevadm control --reload
+sudo udevadm control --reload
 ```
 
 ## picotool
@@ -63,6 +63,12 @@ cd picotool
 mkdir -p build && cd build
 cmake ..
 make -j4
+sudo make install
+
+# since we are in build directory, go back into picotool directory
+cd ..
+sudo cp udev/60-picotool.rules /etc/udev/rules.d/
+udevadm control --reload
 ```
 
 ## debugprobe fw binary
@@ -103,6 +109,7 @@ sudo picotool load -f debugprobe_on_pico2.uf2
 cd ~/pico
 
 git clone https://github.com/raspberrypi/pico-examples.git
+cd pico-examples
 git submodule update --init --recursive
 mkdir -p build && cd build
 
