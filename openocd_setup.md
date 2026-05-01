@@ -116,6 +116,9 @@ mkdir -p build && cd build
 # !!! Again be careful here !!! Since we are building for the pico2 we insert the
 # pico2 cmake flag
 cmake -DPICO_BOARD=pico2 ..
+# w/debug optional
+ 
+cmake -DPICO_BOARD=pico2 -DCMAKE_BUILD_TYPE=Debug ..
 
 # Let's make the blink binary
 cd blink
