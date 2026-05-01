@@ -4,6 +4,13 @@ These instructions are hastily written for the pico2 as a debugger and pico2 as
 main mcu unit. Please be careful with your CMAKE flags when modifying a standard
 pico.
 
+## Windows Users:
+Install usbipd in powershell with
+```{powershell}
+winget install usbipd
+```
+May need to restart computer after here. Then install `wsl-usb-manager`
+
 ## pico-sdk
 ```{bash}
 sudo apt update
