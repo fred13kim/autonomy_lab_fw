@@ -22,6 +22,7 @@ sudo apt install -y jq cmake libtool automake libusb-1.0-0-dev libhidapi-dev \
 # Create pico directory if haven't already
 mkdir -p ~/pico && cd ~/pico
 # Clone & install pico-sdk repo here
+git clone https://github.com/raspberrypi/pico-sdk.git
 
 ```
 
